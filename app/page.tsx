@@ -7,7 +7,7 @@ export default function Page() {
         Charlotte Wang
       </h1>
       <p className="mb-4">
-        {`Nice. Update this page with your own content. You can also add more pages by creating new files in the "app" directory. For example, you could create an "about.tsx" file for an About Me page.`}
+        {`AI native machine learning engineer. Rebuilding my daily workflow on top of AI tools to improve efficiency.`}
       </p>
       <div className="my-8">
         <BlogPosts />
