@@ -21,11 +21,12 @@ export async function POST(request: Request) {
 
                     Job Description: ${jobDescription}
                     
-                    Response in JSON format only:
+                    Response in JSON format only, no markdown, no code blocks:
                     {
                     "matchScore": <number 0-100>,
                     "matchingSkills": [<list of skills that match the job description>],
                     "missingSkills": [<list of skills that are required by the job description but not mentioned in the resume>],
+                    "suggestions": [<list of suggestions to improve the resume to better match the job description>],
                     "summary": <a brief summary of how well the resume matches the job description>
             }`
                 }]
@@ -35,7 +36,9 @@ export async function POST(request: Request) {
         const content = message.content[0]
         if (content.type !== 'text') throw new Error('Unexpected content type from Claude API')
 
-        const result = JSON.parse(content.text)
+        const cleaned = content.text.replace(/```json/g, '').replace(/```/g, '').trim()
+
+        const result = JSON.parse(cleaned)
         return Response.json(result)
 
     } catch (error) {
