@@ -10,26 +10,29 @@ interface MatchResult {
 }
 
 export default function ResumeMatcher() {
-  const [resume, setResume] = useState('')
-  const [jobDescription, setJobDescription] = useState('')
+  const [resumeFile, setResumeFile] = useState<File | null>(null)
+  const [jobUrl, setJobUrl] = useState('')
   const [result, setResult] = useState<MatchResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   async function analyzeResumeMatch() {
-    if (!resume || !jobDescription) {
-      setError('Please provide both resume and job description')
-      return
-    }
+ 
     setLoading(true)
     setError('')
     try {
+        if(!resumeFile) {setError('Please upload your resume file.'); setLoading(false); return}
+        if(!jobUrl) {setError('Please enter the job URL.'); setLoading(false); return}
+
+        const formData = new FormData()
+        formData.append('resumeFile', resumeFile)
+        formData.append('jobUrl', jobUrl)
         const res = await fetch('/api/resume-match', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ resume, jobDescription })
+            body: formData
         })
         if (!res.ok) throw new Error('Failed to analyze resume')
         setResult(await res.json())
@@ -47,24 +50,32 @@ export default function ResumeMatcher() {
             <p className="text-neutral-600 dark:text-neutral-400 mb-8">
                 Place your resume and the job description to see how well they match.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                <label className="block text-sm font-medium mb-2">Your Resume</label>
-                <textarea
-                        className="w-full h-64 p-3 border rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-neutral-300"
-                        placeholder="Paste your resume here..."
-                        value={resume}
-                        onChange={(e) => setResume(e.target.value)}
-                    />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+   
+                <label className="block text-sm font-medium mb-2">Your Resume(PDF)</label>
+                <div className="w-full h-64 border-2 border-dashed rounded-lg flex flex-col items-center justify-center gap-2">
+                    <p  className="text-sm text-neutral-500">{resumeFile ?   resumeFile.name : 'Select a PDF file'}</p>
+                    <label className="cursor-pointer px-4 py-2 bg-blue-100 rounded-lg text-sm hover:bg-blue-200">
+                        Browse
+                        <input
+                            type="file"
+                            className="hidden"
+                            accept=".pdf"
+                            onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
+                        />
+                    </label>
                 </div>
+
                 <div>
-                    <label className="block text-sm font-medium mb-2">Job Description</label>
-                    <textarea
-                        className="w-full h-64 p-3 border rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-neutral-300"
-                        placeholder="Paste the job description here..."
-                        value={jobDescription}
-                        onChange={(e) => setJobDescription(e.target.value)}
+                    <label className="block text-sm font-medium mb-2">Job Description URL</label>
+                    <input
+                        type="url"
+                        className="w-full p-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+                        placeholder="https://example.com/job-description"
+                        value={jobUrl}
+                        onChange={(e) => setJobUrl(e.target.value)}
                     />
+                    <p className="text-xs text-neutral-500 mt-1">Works best with Greenhouse and Lever. <br/> LinkedIn and Indeed are not supported.</p>
                 </div>
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}

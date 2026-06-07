@@ -1,14 +1,28 @@
 import Anthropic from "@anthropic-ai/sdk";
+import {extractTextFromPDF} from 'app/lib/pdf-utils'
+import {fetchJobFromUrl} from 'app/lib/job-utils'
 
 const client = new Anthropic()
 
 export async function POST(request: Request) {
     try{
-        const { resume, jobDescription } = await request.json()
+        
+        const fromData = await request.formData()
+        const resumeFile = fromData.get('resumeFile') as File | null
+        const jobUrl = fromData.get('jobUrl') as string | null
 
-        if (!resume || !jobDescription) {
-            return   Response.json({ error: 'Resume and job description are required' }, { status: 400 })
+        if(!resumeFile || resumeFile.size === 0){
+            return Response.json({error: 'Resume file is required'}, {status:400})
         }
+        if(!jobUrl){
+            return Response.json({error: 'Job URL is required'}, {status:400})
+        }
+
+        const resumeBuffer = await resumeFile.arrayBuffer()
+        const resume = await extractTextFromPDF(Buffer.from(resumeBuffer))
+        const jobDescription = await fetchJobFromUrl(jobUrl)
+
+
         const message = await client.messages.create({
             model: 'claude-haiku-4-5',
             max_tokens:1024,
@@ -43,7 +57,7 @@ export async function POST(request: Request) {
 
     } catch (error) {
         console.error('Claude API error:', error)
-        return Response.json({ error: 'Failed to analyze resume' }, { status: 400 })
+        return Response.json({ error: 'Failed to analyze resume' }, { status: 500 })
     }
 
 }

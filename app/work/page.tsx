@@ -18,7 +18,7 @@ export default function WorkPage() {
                 title="Resume & JD Matcher"
                 description="A tool that uses AI to analyze the match between a resume and a job description, providing a match score and insights for improvement."
                 href="/resume-matcher"
-                tags={['AI', 'NLP', 'React']}
+                tags={['AI', 'NLP', 'React', 'LLM']}
                 status="Completed"
             />
             </div>
