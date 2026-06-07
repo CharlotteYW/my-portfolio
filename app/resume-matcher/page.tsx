@@ -63,7 +63,7 @@ Return ONLY valid JSON with no markdown fences or preamble, in this exact shape:
       parsed.matchScore = Math.max(0, Math.min(100, Math.round(parsed.matchScore)))
       setResult(parsed)
     } catch (err) {
-      setError('Something went wrong while analyzing the resume. Please try again.')
+      setError('Something went wrong while analyzing the resume. Please try again. ' + err.message)
     } finally {
       setLoading(false)
     }
