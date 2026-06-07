@@ -43,4 +43,4 @@ export async function POST(request: Request) {
         return Response.json({ error: 'Failed to analyze resume' }, { status: 400 })
     }
 
-}ß
+}
