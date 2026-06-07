@@ -42,10 +42,10 @@ export default function ResumeMatcher() {
     return (
         <section>
             <h1 className="font-bold text-2xl mb-2 tracking-tight"> 
-                Resume & Job URL Matcher
+                Resume & Job Matcher
             </h1>
             <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-                Upload your resume and the job URL to see how well they match.
+                Upload your resume and providethe job URL to see how well they match.
             </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div> 
