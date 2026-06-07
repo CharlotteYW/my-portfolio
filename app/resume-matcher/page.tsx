@@ -29,9 +29,6 @@ export default function ResumeMatcher() {
         formData.append('jobUrl', jobUrl)
         const res = await fetch('/api/resume-match', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: formData
         })
         if (!res.ok) throw new Error('Failed to analyze resume')
@@ -51,19 +48,20 @@ export default function ResumeMatcher() {
                 Place your resume and the job description to see how well they match.
             </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-   
+                <div> 
                 <label className="block text-sm font-medium mb-2">Your Resume(PDF)</label>
-                <div className="w-full h-64 border-2 border-dashed rounded-lg flex flex-col items-center justify-center gap-2">
-                    <p  className="text-sm text-neutral-500">{resumeFile ?   resumeFile.name : 'Select a PDF file'}</p>
-                    <label className="cursor-pointer px-4 py-2 bg-blue-100 rounded-lg text-sm hover:bg-blue-200">
-                        Browse
-                        <input
-                            type="file"
-                            className="hidden"
-                            accept=".pdf"
-                            onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
-                        />
-                    </label>
+                    <div className="w-full h-64 border-2 border-dashed rounded-lg flex flex-col items-center justify-center gap-2">
+                        <p  className="text-sm text-neutral-500">{resumeFile ?   resumeFile.name : 'Select a PDF file'}</p>
+                        <label className="cursor-pointer px-4 py-2 bg-blue-100 rounded-lg text-sm hover:bg-blue-200">
+                            Browse
+                            <input
+                                type="file"
+                                className="hidden"
+                                accept=".pdf"
+                                onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
+                            />
+                        </label>
+                    </div>
                 </div>
 
                 <div>
