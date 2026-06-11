@@ -1,7 +1,7 @@
 ---
 title: 'System Design Databases'
 publishedAt: '2026-06-11'
-summary: 'This post summarize my experience for databases'
+summary: 'This post summarizes my experience with databases'
 ---
 
 # Database Overview for System Design Interviews
@@ -253,14 +253,14 @@ user:123 -> {...}
 
 # Quick Comparison Table
 
-| Database Type | Read              | Write     | Scale     | Consistency | Best For         |
-| ------------- | ----------------- | --------- | --------- | ----------- | ---------------- |
-| SQL           | Good              | Good      | Medium    | Strong      | Orders, Payments |
-| MongoDB       | Good              | Good      | High      | Medium      | User Data        |
-| Redis         | Excellent         | Excellent | High      | Medium      | Cache            |
-| Cassandra     | Good              | Excellent | Excellent | Eventual    | Messaging        |
-| Neo4j         | Good              | Medium    | Medium    | Strong      | Social Graph     |
-| Elasticsearch | Excellent         | Good      | High      | Eventual    | Search           |
+| Database Type | Read      | Write     | Scale     | Consistency | Best For         |
+| ------------- | --------- | --------- | --------- | ----------- | ---------------- |
+| SQL           | Good      | Good      | Medium    | Strong      | Orders, Payments |
+| MongoDB       | Good      | Good      | High      | Medium      | User Data        |
+| Redis         | Excellent | Excellent | High      | Medium      | Cache            |
+| Cassandra     | Good      | Excellent | Excellent | Eventual    | Messaging        |
+| Neo4j         | Good      | Medium    | Medium    | Strong      | Social Graph     |
+| Elasticsearch | Excellent | Good      | High      | Eventual    | Search           |
 | Vector DB     | Similarity Search | Good      | High      | N/A         | AI Applications  |
 
 ---
@@ -283,7 +283,7 @@ A system like WeChat typically stores chat messages in a wide-column database si
 
 ### Typical Key
 
-```text
+```
 conversation_id
 message_id
 timestamp
@@ -456,38 +456,36 @@ This combination is extremely common today:
 
 # Interview-Friendly Summary
 
-```text
-SQL
-├─ Strong consistency
-├─ Transactions
-└─ Orders / Payments
+**SQL**
+- Strong consistency
+- Transactions
+- Orders / Payments
 
-MongoDB
-├─ Flexible schema
-├─ Easy development
-└─ User profiles
+**MongoDB**
+- Flexible schema
+- Easy development
+- User profiles
 
-Redis
-├─ Extremely fast
-└─ Cache / Sessions
+**Redis**
+- Extremely fast
+- Cache / Sessions
 
-Cassandra
-├─ Massive writes
-├─ Horizontal scaling
-└─ Chat messages
+**Cassandra**
+- Massive writes
+- Horizontal scaling
+- Chat messages
 
-Elasticsearch
-├─ Full-text search
-└─ Search engine
+**Elasticsearch**
+- Full-text search
+- Search engine
 
-Neo4j
-├─ Relationship queries
-└─ Social graph
+**Neo4j**
+- Relationship queries
+- Social graph
 
-Qdrant
-├─ Vector search
-└─ RAG / AI applications
-```
+**Qdrant**
+- Vector search
+- RAG / AI applications
 
 ---
 
