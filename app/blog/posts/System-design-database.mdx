@@ -4,12 +4,495 @@ publishedAt: '2026-06-11'
 summary: 'This post summarize my experience for databases'
 ---
 
-Database Categories
-1. Relational Database (SQL)
+# Database Overview for System Design Interviews
 
-Examples:
+When discussing databases in system design interviews, think about **data access patterns first**, then choose the database.
 
-MySQL
-PostgreSQL
-Oracle Database
-Microsoft SQL Server
+A common interview mistake is:
+
+> "I know MongoDB, so I'll use MongoDB."
+
+Instead, think:
+
+> What are the requirements? Consistency? Scale? Search? Relationships? Analytics?
+
+---
+
+# Database Categories
+
+## 1. Relational Database (SQL)
+
+### Examples
+
+* MySQL
+* PostgreSQL
+* Oracle Database
+* Microsoft SQL Server
+
+### Data Model
+
+#### Users
+
+| id | name  |
+| -- | ----- |
+| 1  | Alice |
+
+#### Orders
+
+| id   | user_id |
+| ---- | ------- |
+| 1001 | 1       |
+
+Relationships are enforced by foreign keys.
+
+### Good At
+
+* Strong consistency
+* Transactions (ACID)
+* Complex joins
+* Financial systems
+* Order systems
+* Inventory systems
+
+### Bad At
+
+* Horizontal scaling is harder
+* Schema changes can be expensive
+* Very large write throughput
+
+### Typical Use Cases
+
+* Banking
+* E-commerce
+* ERP
+* Payment systems
+
+---
+
+## 2. Document Database
+
+### Examples
+
+* MongoDB
+* Couchbase
+
+### Data Model
+
+```json
+{
+  "userId": 123,
+  "name": "John",
+  "addresses": [
+    {
+      "city": "Seattle"
+    }
+  ]
+}
+```
+
+### Good At
+
+* Flexible schema
+* Fast development
+* JSON-native
+* Easy horizontal scaling
+
+### Bad At
+
+* Complex joins are weak
+* Data duplication is common
+* Multi-document transactions are less ideal
+
+### Typical Use Cases
+
+* User profiles
+* CMS
+* Product catalogs
+* AI application metadata
+
+---
+
+## 3. Key-Value Database
+
+### Examples
+
+* Redis
+* Amazon DynamoDB
+
+### Data Model
+
+```text
+user:123 -> {...}
+```
+
+### Good At
+
+* Extremely fast
+* Millisecond latency
+* Massive scale
+
+### Bad At
+
+* Poor querying capability
+* Limited relationships
+
+### Typical Use Cases
+
+* Session storage
+* Cache
+* Shopping cart
+* User state
+
+---
+
+## 4. Wide-Column Database
+
+### Examples
+
+* Apache Cassandra
+* Apache HBase
+* ScyllaDB
+
+### Good At
+
+* Massive write throughput
+* Multi-region deployments
+* Petabyte-scale storage
+
+### Bad At
+
+* Limited joins
+* More complicated data modeling
+
+### Typical Use Cases
+
+* Messaging
+* Event storage
+* Time-series workloads
+
+---
+
+## 5. Graph Database
+
+### Examples
+
+* Neo4j
+* Amazon Neptune
+
+### Good At
+
+* Relationship traversal
+* Social graphs
+* Recommendation systems
+
+### Bad At
+
+* Expensive at huge scale
+* Not ideal for transactional workloads
+
+### Typical Use Cases
+
+* Friend relationships
+* Fraud detection
+* Knowledge graphs
+
+---
+
+## 6. Search Database
+
+### Examples
+
+* Elasticsearch
+* OpenSearch
+
+### Good At
+
+* Full-text search
+* Ranking
+* Analytics
+
+### Bad At
+
+* Not a source of truth
+* Eventual consistency
+
+### Typical Use Cases
+
+* Search bars
+* Log analysis
+* Product search
+
+---
+
+## 7. Vector Database
+
+### Examples
+
+* Qdrant
+* Pinecone
+* Milvus
+
+### Good At
+
+* Semantic search
+* RAG
+* AI memory
+
+### Bad At
+
+* Not designed for transactional data
+* Not a replacement for SQL databases
+
+### Typical Use Cases
+
+* ChatGPT-like RAG
+* AI agents
+* Similarity search
+
+---
+
+# Quick Comparison Table
+
+| Database Type | Read              | Write     | Scale     | Consistency | Best For         |
+| ------------- | ----------------- | --------- | --------- | ----------- | ---------------- |
+| SQL           | Good              | Good      | Medium    | Strong      | Orders, Payments |
+| MongoDB       | Good              | Good      | High      | Medium      | User Data        |
+| Redis         | Excellent         | Excellent | High      | Medium      | Cache            |
+| Cassandra     | Good              | Excellent | Excellent | Eventual    | Messaging        |
+| Neo4j         | Good              | Medium    | Medium    | Strong      | Social Graph     |
+| Elasticsearch | Excellent         | Good      | High      | Eventual    | Search           |
+| Vector DB     | Similarity Search | Good      | High      | N/A         | AI Applications  |
+
+---
+
+# What Does WeChat Use?
+
+## Chat Messages
+
+A system like WeChat typically stores chat messages in a wide-column database similar to:
+
+* Cassandra-like systems
+* Proprietary distributed storage
+
+### Requirements
+
+* Billions of messages
+* Sequential reads
+* Huge write volume
+* Multi-region replication
+
+### Typical Key
+
+```text
+conversation_id
+message_id
+timestamp
+```
+
+Messages are usually stored append-only.
+
+## Friend Relationships
+
+Often stored using:
+
+* Graph database concepts
+* Large distributed key-value systems
+
+```text
+user -> friend list
+```
+
+## Search
+
+Typically:
+
+* Elasticsearch
+* OpenSearch
+
+## Cache
+
+Typically:
+
+* Redis
+
+Large messaging platforms almost never use a single database.
+
+---
+
+# What Does Telegram Use?
+
+Telegram uses a custom distributed architecture.
+
+| Data          | Likely Storage Type |
+| ------------- | ------------------- |
+| Messages      | Distributed storage |
+| User Profiles | SQL / KV            |
+| Sessions      | Redis-like          |
+| Search        | Search Index        |
+
+Telegram is heavily optimized for:
+
+* Fast writes
+* Multi-device synchronization
+* Global replication
+
+---
+
+# What Does ChatGPT Use?
+
+Nobody outside OpenAI knows the exact architecture.
+
+A typical ChatGPT-like architecture might look like:
+
+```text
+                User
+                  |
+                  v
+             API Server
+                  |
+       -----------------------
+       |         |           |
+       v         v           v
+
+ Conversation   Vector DB   Cache
+ Database         (RAG)     Redis
+       |
+       v
+ Search Index
+```
+
+## Chat History
+
+Most likely stored in:
+
+* PostgreSQL
+* MySQL
+* DynamoDB
+* Internal distributed databases
+
+### Example Schema
+
+```text
+Conversation
+    |
+Messages
+    ├── conversation_id
+    ├── message_id
+    ├── role
+    ├── content
+    └── timestamp
+```
+
+This data is relational and transactional, making SQL a natural choice.
+
+## AI Memory / RAG
+
+Typically:
+
+* Qdrant
+* Pinecone
+* Milvus
+* Internal vector stores
+
+## Search
+
+Typically:
+
+* Elasticsearch
+* OpenSearch
+
+## Cache
+
+Typically:
+
+* Redis
+
+---
+
+# System Design Interview Rule of Thumb
+
+### Orders / Payments
+
+* PostgreSQL
+* MySQL
+
+Reason: consistency is critical.
+
+### User Profiles
+
+* MongoDB
+* PostgreSQL
+
+Reason: flexible schema requirements.
+
+### Chat Messages
+
+* Cassandra
+* ScyllaDB
+* DynamoDB
+
+Reason: massive write throughput.
+
+### Search Bar
+
+* Elasticsearch
+* OpenSearch
+
+### Recommendation System
+
+* Neo4j
+* Graph databases
+
+### AI Agent / RAG
+
+* PostgreSQL + Qdrant
+
+This combination is extremely common today:
+
+* PostgreSQL = source of truth
+* Qdrant = semantic retrieval
+
+---
+
+# Interview-Friendly Summary
+
+```text
+SQL
+├─ Strong consistency
+├─ Transactions
+└─ Orders / Payments
+
+MongoDB
+├─ Flexible schema
+├─ Easy development
+└─ User profiles
+
+Redis
+├─ Extremely fast
+└─ Cache / Sessions
+
+Cassandra
+├─ Massive writes
+├─ Horizontal scaling
+└─ Chat messages
+
+Elasticsearch
+├─ Full-text search
+└─ Search engine
+
+Neo4j
+├─ Relationship queries
+└─ Social graph
+
+Qdrant
+├─ Vector search
+└─ RAG / AI applications
+```
+
+---
+
+# Key Takeaway
+
+For most modern large-scale systems, the best answer in interviews is usually **polyglot persistence**:
+
+> Use multiple databases, each optimized for the workload it handles best, rather than trying to store everything in MongoDB or everything in PostgreSQL.
