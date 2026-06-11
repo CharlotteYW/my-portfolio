@@ -1,49 +1,81 @@
-# Portfolio Blog Starter
+# My Portfolio Website
 
-A modern portfolio website template with integrated blog functionality. This starter kit includes:
+A modern portfolio website with integrated blog functionality built with Next.js and Tailwind CSS.
 
-- MDX and Markdown support for rich content
-- SEO optimization (sitemap, robots.txt, JSON-LD schema)
+## Features
+
+- Blog with MDX and Markdown support
+- SEO optimized (sitemap, robots.txt, JSON-LD schema)
 - RSS feed generation
 - Dynamic Open Graph images
 - Syntax highlighting for code blocks
 - Tailwind CSS v4 styling
 - Vercel Speed Insights and Web Analytics
 - Geist font for typography
-
-## Live Demo
-
-[View the live demo](https://portfolio-blog-starter.vercel.app)
+- Responsive design
 
 ## Getting Started
 
-You can use this repository in one of two ways:
+### Prerequisites
 
-### One-Click Deploy
+- Node.js 18.17.0 or later
+- pnpm package manager
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+### Installation
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-1. Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
+1. Clone the repository:
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+git clone https://github.com/your-username/my-portfolio.git
 ```
 
-2. Navigate to the project directory and install dependencies:
-
+2. Navigate to the project directory:
 ```bash
-cd blog
+cd my-portfolio
+```
+
+3. Install dependencies:
+```bash
 pnpm install
 ```
 
-3. Run Next.js in development mode:
-
+4. Run the development server:
 ```bash
 pnpm dev
 ```
 
-4. Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+5. Open [http://localhost:3000](http://localhost:3000) to view the website
+
+## Deployment
+
+Deploy to Vercel using the [Vercel CLI](https://vercel.com/cli) or by connecting your GitHub repository to Vercel.
+
+## Folder Structure
+
+```
+my-portfolio/
+├── app/                # Next.js app directory
+├── public/             # Static files
+├── src/                # Source files
+├── components/         # Reusable components
+├── lib/                # Utility functions
+├── styles/             # CSS styles
+├── app/blog/           # Blog content
+├── package.json        # Project dependencies
+└── README.md           # This file
+```
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Vercel Platform](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples) - deploy and host Next.js sites.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
