@@ -1,7 +1,7 @@
 ---
-title: 'System Design Databases'
+title: 'System Design Databases: A Comprehensive Guide'
 publishedAt: '2026-06-11'
-summary: 'This post summarizes my experience with databases'
+summary: 'A comprehensive guide to database systems for system design interviews and real-world applications'
 ---
 
 # Database Overview for System Design Interviews
@@ -15,6 +15,8 @@ A common interview mistake is:
 Instead, think:
 
 > What are the requirements? Consistency? Scale? Search? Relationships? Analytics?
+
+Understanding the trade-offs between different database systems is crucial for system design interviews. The right database choice can make or break the scalability and performance of your application.
 
 ---
 
@@ -67,6 +69,14 @@ Relationships are enforced by foreign keys.
 * ERP
 * Payment systems
 
+### Key Considerations
+
+SQL databases are excellent when you need:
+- ACID compliance
+- Complex queries and relationships
+- Structured data with well-defined schemas
+- Strong data integrity guarantees
+
 ---
 
 ## 2. Document Database
@@ -110,6 +120,14 @@ Relationships are enforced by foreign keys.
 * Product catalogs
 * AI application metadata
 
+### Key Considerations
+
+Document databases shine when you need:
+- Flexible schemas that can evolve quickly
+- Fast development cycles
+- Complex nested data structures
+- Horizontal scaling across multiple nodes
+
 ---
 
 ## 3. Key-Value Database
@@ -143,6 +161,14 @@ user:123 -> {...}
 * Shopping cart
 * User state
 
+### Key Considerations
+
+Key-value databases are ideal for:
+- High-speed caching scenarios
+- Simple data access patterns
+- When you need sub-millisecond response times
+- Storing temporary or session-based data
+
 ---
 
 ## 4. Wide-Column Database
@@ -170,6 +196,14 @@ user:123 -> {...}
 * Event storage
 * Time-series workloads
 
+### Key Considerations
+
+Wide-column databases are perfect for:
+- Write-heavy applications
+- IoT data collection
+- Time-series analysis
+- Multi-region applications requiring high availability
+
 ---
 
 ## 5. Graph Database
@@ -196,6 +230,14 @@ user:123 -> {...}
 * Fraud detection
 * Knowledge graphs
 
+### Key Considerations
+
+Graph databases excel at:
+- Finding relationships between data points
+- Social network analysis
+- Recommendation engines
+- Network security applications
+
 ---
 
 ## 6. Search Database
@@ -221,6 +263,14 @@ user:123 -> {...}
 * Search bars
 * Log analysis
 * Product search
+
+### Key Considerations
+
+Search databases are essential for:
+- Complex text search capabilities
+- Log analysis and monitoring
+- Product search functionality
+- When you need to rank results
 
 ---
 
@@ -249,6 +299,14 @@ user:123 -> {...}
 * AI agents
 * Similarity search
 
+### Key Considerations
+
+Vector databases are crucial for:
+- AI and machine learning applications
+- Semantic search capabilities
+- Similarity matching
+- Retrieval Augmented Generation (RAG) systems
+
 ---
 
 # Quick Comparison Table
@@ -265,23 +323,25 @@ user:123 -> {...}
 
 ---
 
-# What Does WeChat Use?
+# Real-World Database Usage Examples
 
-## Chat Messages
+## What Does WeChat Use?
+
+### Chat Messages
 
 A system like WeChat typically stores chat messages in a wide-column database similar to:
 
 * Cassandra-like systems
 * Proprietary distributed storage
 
-### Requirements
+#### Requirements
 
 * Billions of messages
 * Sequential reads
 * Huge write volume
 * Multi-region replication
 
-### Typical Key
+#### Typical Key
 
 ```
 conversation_id
@@ -291,35 +351,35 @@ timestamp
 
 Messages are usually stored append-only.
 
-## Friend Relationships
+### Friend Relationships
 
 Often stored using:
 
 * Graph database concepts
 * Large distributed key-value systems
 
-```text
+```
 user -> friend list
 ```
 
-## Search
+### Search
 
 Typically:
 
 * Elasticsearch
 * OpenSearch
 
-## Cache
+### Cache
 
 Typically:
 
 * Redis
 
-Large messaging platforms almost never use a single database.
+Large messaging platforms almost never use a single database. Instead, they use a combination of databases optimized for different workloads.
 
 ---
 
-# What Does Telegram Use?
+## What Does Telegram Use?
 
 Telegram uses a custom distributed architecture.
 
@@ -338,19 +398,19 @@ Telegram is heavily optimized for:
 
 ---
 
-# What Does ChatGPT Use?
+## What Does ChatGPT Use?
 
 Nobody outside OpenAI knows the exact architecture.
 
 A typical ChatGPT-like architecture might look like:
 
-```text
+```
                 User
                   |
                   v
              API Server
                   |
-       -----------------------
+       ------ ------ --------- --
        |         |           |
        v         v           v
 
@@ -361,7 +421,7 @@ A typical ChatGPT-like architecture might look like:
  Search Index
 ```
 
-## Chat History
+### Chat History
 
 Most likely stored in:
 
@@ -370,7 +430,7 @@ Most likely stored in:
 * DynamoDB
 * Internal distributed databases
 
-### Example Schema
+#### Example Schema
 
 ```text
 Conversation
@@ -385,7 +445,7 @@ Messages
 
 This data is relational and transactional, making SQL a natural choice.
 
-## AI Memory / RAG
+### AI Memory / RAG
 
 Typically:
 
@@ -394,14 +454,14 @@ Typically:
 * Milvus
 * Internal vector stores
 
-## Search
+### Search
 
 Typically:
 
 * Elasticsearch
 * OpenSearch
 
-## Cache
+### Cache
 
 Typically:
 
@@ -494,3 +554,5 @@ This combination is extremely common today:
 For most modern large-scale systems, the best answer in interviews is usually **polyglot persistence**:
 
 > Use multiple databases, each optimized for the workload it handles best, rather than trying to store everything in MongoDB or everything in PostgreSQL.
+
+In real-world applications, successful systems often combine multiple database technologies to optimize for different aspects of their requirements.
