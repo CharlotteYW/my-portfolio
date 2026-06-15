@@ -21,6 +21,13 @@ export default function WorkPage() {
                 tags={['AI', 'NLP', 'React', 'LLM']}
                 status="Completed"
             />
+            <ProjectCard
+                title="Mini Chat"
+                description="Implement a Chat GPT style app that it can interact with you by using react, Groq, Supabase and FastAPI in the backend"
+                href="https://mini-chat-ebon.vercel.app/"
+                tags={['React', 'FAstAPI', 'Groq', 'Streaming']}
+                status="Completed"
+            />
             </div>
         </section>
     )
