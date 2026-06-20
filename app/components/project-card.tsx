@@ -8,7 +8,7 @@ interface ProjectCardProps {
   status?: 'In Progress' | 'Completed' | 'Planned'
   companyWork?: string[]
   individualProject?: string[]
-  individualProjectHref?: string
+  individualProjectHref?: string | null
 }
 
 const statusConfig = {
@@ -59,16 +59,16 @@ return (
     <div className="mb-3">
       <ProjectBullet 
         title="Company Work" 
-        items={companyWork} 
-        showEntry={false} 
+        items={companyWork || []} 
+        entry={undefined} 
       />
     </div>
     
     <div className="border-t border-gray-200 dark:border-gray-600 pt-3 mt-3">
       <ProjectBullet 
         title="Individual Project" 
-        items={individualProject} 
-        showEntry={individualProjectHref} 
+        items={individualProject || []} 
+        entry={individualProjectHref || undefined} 
       />
     </div>
   </div>
