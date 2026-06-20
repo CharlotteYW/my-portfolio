@@ -27,7 +27,7 @@ export default function Page() {
           <ProjectCard
             title="Resume & JD Matcher"
             description="A tool that uses AI to analyze the match between a resume and a job description, providing a match score and insights for improvement."
-            href="/resume-matcher"
+            href="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
             tags={['AI', 'NLP', 'React', 'LLM']}
             status="Completed"
           />
