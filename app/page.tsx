@@ -71,6 +71,78 @@ export default function Page() {
           />
         </div>
       </div>
+      
+      <div className="my-8">
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Foundation Model & Infrastructure</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ProjectCard
+            title="Model Training Pipeline"
+            href="#"
+            tags={['Python', 'DVC', 'MLflow', 'Docker']}
+            status="Completed"
+            companyWork={[
+              "Built automated ML model training pipeline",
+              "Integrated with cloud storage for model versioning"
+            ]}
+            individualProject={[
+              "Developed CI/CD pipeline for model training",
+              "Implemented experiment tracking with MLflow"
+            ]}
+            individualProjectHref="#"
+          />
+          <ProjectCard
+            title="Cloud Infrastructure"
+            href="#"
+            tags={['AWS', 'Kubernetes', 'Terraform', 'Docker']}
+            status="Completed"
+            companyWork={[
+              "Designed scalable cloud infrastructure",
+              "Implemented auto-scaling for ML workloads"
+            ]}
+            individualProject={[
+              "Built containerized ML services with Docker",
+              "Deployed Kubernetes cluster for model serving"
+            ]}
+            individualProjectHref="#"
+          />
+        </div>
+      </div>
+      
+      <div className="my-8">
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">Traditional Machine Learning</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ProjectCard
+            title="Customer Segmentation"
+            href="#"
+            tags={['Python', 'Scikit-learn', 'Pandas', 'Matplotlib']}
+            status="Completed"
+            companyWork={[
+              "Performed customer segmentation analysis",
+              "Built recommendation system"
+            ]}
+            individualProject={[
+              "Implemented clustering algorithms for customer groups",
+              "Visualized segmentation results with matplotlib"
+            ]}
+            individualProjectHref="#"
+          />
+          <ProjectCard
+            title="Predictive Analytics"
+            href="#"
+            tags={['R', 'Shiny', 'ggplot2', 'Statistics']}
+            status="Completed"
+            companyWork={[
+              "Developed predictive models for business metrics",
+              "Created dashboard for business insights"
+            ]}
+            individualProject={[
+              "Built regression models for sales predictions",
+              "Developed interactive dashboard with Shiny"
+            ]}
+            individualProjectHref="#"
+          />
+        </div>
+      </div>
     </section>
   )
 }
