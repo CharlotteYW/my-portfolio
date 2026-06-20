@@ -7,19 +7,12 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Charlotte Wang
       </h1>
-      <p className="mb-4">
-        {`AI native machine learning engineer. Rebuilding my daily workflow on top of AI tools to improve efficiency.`}
-      </p>
-      
-      <div className="my-8">
-        <h2 className="font-semibold text-xl mb-6 tracking-tighter">My Work</h2>
         <p className="text-neutral-600 dark:text-neutral-400">
-          I am an AI native machine learning engineer. I am building my workflow on top of AI tools to improve efficiency and creativity. I am passionate about using AI to solve real-world problems and create value for users.
+          I am an experienced machine learning engineer/research data scientist with five plus years experience. 
+          I am building my workflow on top of AI tools to improve efficiency and creativity. 
+          I am passionate about using AI to solve real-world problems and create value for users.
         </p>
-        <p className="text-neutral-600 dark:text-neutral-400 mt-2">
-          I would try to put what I have done and learn here
-        </p>
-      </div>
+      
       
       <div className="my-8">
         <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Applications</h2>
