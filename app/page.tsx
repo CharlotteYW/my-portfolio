@@ -7,15 +7,15 @@ import { Collapsible } from 'app/components/collapsible'
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+    <section className="mt-4">
+      <h1 className="mb-4 text-xl font-semibold tracking-tighter">
         Charlotte Wang
       </h1>
-      <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
         Seattle, WA
       </p>
       <div className="my-4">
-        <h2 className="font-semibold text-2xl mb-6">Individual Summary</h2>
+        <h2 className="font-semibold text-2xl mb-6 tracking-tighter">Individual Summary</h2>
         <ul className="list-disc pl-5 space-y-1">
           <li>Machine Learning Engineer / Research Data Scientist with 5+ years of experience delivering scalable AI and machine learning solutions across data engineering, model development, and production systems.</li>
           <li>Led the development of end-to-end ML platforms, including data infrastructure, feature pipelines, model training, evaluation, and deployment, enabling data-driven decision-making at scale.</li>
