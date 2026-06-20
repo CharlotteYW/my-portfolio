@@ -37,14 +37,10 @@ export default function Page() {
           <li></li>
         </ul>
         
-        <h3 className="font-semibold text-base mb-2 ml-4">Infrastructure</h3>
+        <h3 className="font-semibold text-base mb-2 ml-4">Cloud & Infrastructure</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
-        </ul>
-        
-        <h3 className="font-semibold text-base mb-2 ml-4">Cloud</h3>
-        <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
+          <li>AWS (EC2, S3, Lambda, SageMaker, EMR, Redshift, Athena), GCP (BigQuery, Vertex AI, GKE,
+Pub/Sub), Kubernetes, Docker, Terraform, REST APIs.</li>
         </ul>
         
         <h3 className="font-semibold text-base mb-2 ml-4">Programming</h3>
