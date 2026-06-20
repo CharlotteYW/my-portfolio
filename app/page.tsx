@@ -2,6 +2,7 @@ import { BlogPosts } from 'app/components/posts'
 import { ProjectCard } from 'app/components/project-card'
 import { LearningItem } from 'app/components/learning-item'
 import { InterviewResource } from 'app/components/interview-resource'
+import { ToolsAndSkills } from 'app/components/tools-and-skills'
 
 export default function Page() {
   return (
@@ -18,129 +19,186 @@ export default function Page() {
       
       <div className="my-8">
         <h2 className="font-semibold text-xl mb-6 tracking-tighter">Tools & Skills</h2>
-         
+        
+        <ToolsAndSkills 
+          title="Machine Learning & Models"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
+        
+        <ToolsAndSkills 
+          title="Machine Learning System & Workflow"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
+        
+        <ToolsAndSkills 
+          title="Infrastructure"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
+        
+        <ToolsAndSkills 
+          title="Cloud"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
+        
+        <ToolsAndSkills 
+          title="Programming"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
+        
+        <ToolsAndSkills 
+          title="AI Tools & Frameworks"
+          content={
+            <ul className="list-disc pl-5 space-y-1 mb-3 text-sm">
+              <li></li>
+            </ul>
+          }
+        />
       </div>
       
       <div className="my-8">
-        <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Applications</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <ProjectCard
-            title="Resume & JD Matcher"
-            href="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
-            tags={['AI', 'NLP', 'React', 'LLM']}
-            status="Completed"
-            companyWork={[
-              "Developed AI-powered resume analysis system",
-              "Implemented LLM-based matching algorithm"
-            ]}
-            individualProject={[
-              "Built responsive web interface with React",
-              "Integrated with LLM backend for intelligent matching"
-            ]}
-            individualProjectHref="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
-          />
-          <ProjectCard
-            title="Mini Chat"
-            href="https://mini-chat-ebon.vercel.app/"
-            tags={['React', 'FastAPI', 'Groq', 'Streaming']}
-            status="Completed"
-            companyWork={[
-              "Implemented ChatGPT-style interface",
-              "Integrated with Groq for fast inference"
-            ]}
-            individualProject={[
-              "Built real-time chat interface with React",
-              "Connected to FastAPI backend for seamless experience"
-            ]}
-            individualProjectHref="https://mini-chat-ebon.vercel.app/"
-          />
-          <ProjectCard
-            title="SQL Writing Agent"
-            href="https://sql-agent-dusky.vercel.app/"
-            tags={['React', 'FastAPI', 'Groq', 'MCP']}
-            status="Completed"
-            companyWork={[
-              "Developed SQL query generation tool",
-              "Integrated with various database connectors"
-            ]}
-            individualProject={[
-              "Built interactive SQL editor interface",
-              "Connected to LLM for natural language to SQL conversion"
-            ]}
-            individualProjectHref="https://sql-agent-dusky.vercel.app/"
-          />
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">Projects</h2>
+        
+        <div className="my-8">
+          <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Applications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <ProjectCard
+              title="Resume & JD Matcher"
+              href="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
+              tags={['AI', 'NLP', 'React', 'LLM']}
+              status="Completed"
+              companyWork={[
+                "Developed AI-powered resume analysis system",
+                "Implemented LLM-based matching algorithm"
+              ]}
+              individualProject={[
+                "Built responsive web interface with React",
+                "Integrated with LLM backend for intelligent matching"
+              ]}
+              individualProjectHref="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
+            />
+            <ProjectCard
+              title="Mini Chat"
+              href="https://mini-chat-ebon.vercel.app/"
+              tags={['React', 'FastAPI', 'Groq', 'Streaming']}
+              status="Completed"
+              companyWork={[
+                "Implemented ChatGPT-style interface",
+                "Integrated with Groq for fast inference"
+              ]}
+              individualProject={[
+                "Built real-time chat interface with React",
+                "Connected to FastAPI backend for seamless experience"
+              ]}
+              individualProjectHref="https://mini-chat-ebon.vercel.app/"
+            />
+            <ProjectCard
+              title="SQL Writing Agent"
+              href="https://sql-agent-dusky.vercel.app/"
+              tags={['React', 'FastAPI', 'Groq', 'MCP']}
+              status="Completed"
+              companyWork={[
+                "Developed SQL query generation tool",
+                "Integrated with various database connectors"
+              ]}
+              individualProject={[
+                "Built interactive SQL editor interface",
+                "Connected to LLM for natural language to SQL conversion"
+              ]}
+              individualProjectHref="https://sql-agent-dusky.vercel.app/"
+            />
+          </div>
         </div>
-      </div>
-      
-      <div className="my-8">
-        <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Foundation Model & Infrastructure</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <ProjectCard
-            title="Model Training Pipeline"
-            href="#"
-            tags={['Python', 'DVC', 'MLflow', 'Docker']}
-            status="Completed"
-            companyWork={[
-              "Built automated ML model training pipeline",
-              "Integrated with cloud storage for model versioning"
-            ]}
-            individualProject={[
-              "Developed CI/CD pipeline for model training",
-              "Implemented experiment tracking with MLflow"
-            ]}
-            individualProjectHref="#"
-          />
-          <ProjectCard
-            title="Cloud Infrastructure"
-            href="#"
-            tags={['AWS', 'Kubernetes', 'Terraform', 'Docker']}
-            status="Completed"
-            companyWork={[
-              "Designed scalable cloud infrastructure",
-              "Implemented auto-scaling for ML workloads"
-            ]}
-            individualProject={[
-              "Built containerized ML services with Docker",
-              "Deployed Kubernetes cluster for model serving"
-            ]}
-            individualProjectHref="#"
-          />
+        
+        <div className="my-8">
+          <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Foundation Model & Infrastructure</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <ProjectCard
+              title="Model Training Pipeline"
+              href="#"
+              tags={['Python', 'DVC', 'MLflow', 'Docker']}
+              status="Completed"
+              companyWork={[
+                "Built automated ML model training pipeline",
+                "Integrated with cloud storage for model versioning"
+              ]}
+              individualProject={[
+                "Developed CI/CD pipeline for model training",
+                "Implemented experiment tracking with MLflow"
+              ]}
+              individualProjectHref="#"
+            />
+            <ProjectCard
+              title="Cloud Infrastructure"
+              href="#"
+              tags={['AWS', 'Kubernetes', 'Terraform', 'Docker']}
+              status="Completed"
+              companyWork={[
+                "Designed scalable cloud infrastructure",
+                "Implemented auto-scaling for ML workloads"
+              ]}
+              individualProject={[
+                "Built containerized ML services with Docker",
+                "Deployed Kubernetes cluster for model serving"
+              ]}
+              individualProjectHref="#"
+            />
+          </div>
         </div>
-      </div>
-      
-      <div className="my-8">
-        <h2 className="font-semibold text-xl mb-6 tracking-tighter">Traditional Machine Learning</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <ProjectCard
-            title="Customer Segmentation"
-            href="#"
-            tags={['Python', 'Scikit-learn', 'Pandas', 'Matplotlib']}
-            status="Completed"
-            companyWork={[
-              "Performed customer segmentation analysis",
-              "Built recommendation system"
-            ]}
-            individualProject={[
-              "Implemented clustering algorithms for customer groups",
-              "Visualized segmentation results with matplotlib"
-            ]}
-            individualProjectHref="#"
-          />
-          <ProjectCard
-            title="Predictive Analytics"
-            href="#"
-            tags={['R', 'Shiny', 'ggplot2', 'Statistics']}
-            status="Completed"
-            companyWork={[
-              "Developed predictive models for business metrics",
-              "Created dashboard for business insights"
-            ]}
-            individualProject={[
-              "Built regression models for sales predictions",
-              "Developed interactive dashboard with Shiny"
-            ]}
-            individualProjectHref="#"
-          />
+        
+        <div className="my-8">
+          <h2 className="font-semibold text-xl mb-6 tracking-tighter">Traditional Machine Learning</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <ProjectCard
+              title="Customer Segmentation"
+              href="#"
+              tags={['Python', 'Scikit-learn', 'Pandas', 'Matplotlib']}
+              status="Completed"
+              companyWork={[
+                "Performed customer segmentation analysis",
+                "Built recommendation system"
+              ]}
+              individualProject={[
+                "Implemented clustering algorithms for customer groups",
+                "Visualized segmentation results with matplotlib"
+              ]}
+              individualProjectHref="#"
+            />
+            <ProjectCard
+              title="Predictive Analytics"
+              href="#"
+              tags={['R', 'Shiny', 'ggplot2', 'Statistics']}
+              status="Completed"
+              companyWork={[
+                "Developed predictive models for business metrics",
+                "Created dashboard for business insights"
+              ]}
+              individualProject={[
+                "Built regression models for sales predictions",
+                "Developed interactive dashboard with Shiny"
+              ]}
+              individualProjectHref="#"
+            />
+          </div>
         </div>
       </div>
       
