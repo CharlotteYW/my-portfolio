@@ -11,12 +11,18 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Charlotte Wang
       </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
-          I am an enperience machine learning engineer/research data scientist with five plugs years expeience.
-          In my daily work, I built machine learning platform with huge data to help me company and clients to solve 
-          real business problem to increase revenue and reduce course. My experience include data infrastrueture, data pipeline, machine learning model, model evaluation and AI applications.
-          In addition, with recent trend of AI, I built AI foundation applications and tools for my company to improve productivity.
-        </p>
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+        Seattle, WA
+      </p>
+      <div className="my-4">
+        <h2 className="font-semibold text-2xl mb-6">Individual Summary</h2>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Machine Learning Engineer / Research Data Scientist with 5+ years of experience delivering scalable AI and machine learning solutions across data engineering, model development, and production systems.</li>
+          <li>Led the development of end-to-end ML platforms, including data infrastructure, feature pipelines, model training, evaluation, and deployment, enabling data-driven decision-making at scale.</li>
+          <li>Built AI-powered applications and internal productivity tools leveraging modern LLMs and generative AI technologies to streamline workflows and create business value.</li>
+          <li>Continuously develop personal AI projects to explore emerging technologies and demonstrate expertise in building production-grade solutions that address complex business challenges.</li>
+        </ul>
+      </div>
       
       <div className="my-8">
         <h2 className="font-semibold text-2xl mb-6 tracking-tighter">Tools & Skills</h2>
