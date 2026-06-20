@@ -150,37 +150,37 @@ export default function Page() {
           <LearningItem
             title="Stanford CS336"
             description="Deep Learning Course focusing on modern deep learning techniques and applications."
-            classification="course"
+            category="course"
             href="/course/cs336"
           />
           <LearningItem
             title="Stanford CS224N"
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
-            classification="course"
+            category="course"
             href="/course/cs224n"
           />
           <LearningItem
             title="AI Engineering"
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
-            classification="book"
+            category="book"
             href="/book/aiengineering"
           />
           <LearningItem
             title="Designing Machine Learning Systems"
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
-            classification="book"
+            category="book"
             href="/book/designmachinelearningsystems"
           />
           <LearningItem
             title="Hands-On Large Language Models"
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
-            classification="book"
+            category="book"
             href="/book/handsonlargelanguagemodels"
           />
           <LearningItem
             title="Generative AI with LangChain"
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
-            classification="book"
+            category="book"
             href="/book/generativeaiwithlangchain"
           />
         </div>
