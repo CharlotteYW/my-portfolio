@@ -22,28 +22,52 @@ export default function Page() {
       </div>
       
       <div className="my-8">
-        <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Support Task</h2>
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Applications</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <ProjectCard
             title="Resume & JD Matcher"
-            description="A tool that uses AI to analyze the match between a resume and a job description, providing a match score and insights for improvement."
             href="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
             tags={['AI', 'NLP', 'React', 'LLM']}
             status="Completed"
+            companyWork={[
+              "Developed AI-powered resume analysis system",
+              "Implemented LLM-based matching algorithm"
+            ]}
+            individualProject={[
+              "Built responsive web interface with React",
+              "Integrated with LLM backend for intelligent matching"
+            ]}
+            individualProjectHref="https://resume-match-ox1akazjv-charlotte-yw-s-projects.vercel.app/"
           />
           <ProjectCard
             title="Mini Chat"
-            description="Implement a Chat GPT style app that it can interact with you by using react, Groq, Supabase and FastAPI in the backend"
             href="https://mini-chat-ebon.vercel.app/"
-            tags={['React', 'FAstAPI', 'Groq', 'Streaming']}
+            tags={['React', 'FastAPI', 'Groq', 'Streaming']}
             status="Completed"
+            companyWork={[
+              "Implemented ChatGPT-style interface",
+              "Integrated with Groq for fast inference"
+            ]}
+            individualProject={[
+              "Built real-time chat interface with React",
+              "Connected to FastAPI backend for seamless experience"
+            ]}
+            individualProjectHref="https://mini-chat-ebon.vercel.app/"
           />
           <ProjectCard
             title="SQL Writing Agent"
-            description="Implement a SQL writing agent that can help you write sql from natural language"
             href="https://sql-agent-dusky.vercel.app/"
-            tags={['React', 'FAstAPI', 'Groq', 'MCP']}
+            tags={['React', 'FastAPI', 'Groq', 'MCP']}
             status="Completed"
+            companyWork={[
+              "Developed SQL query generation tool",
+              "Integrated with various database connectors"
+            ]}
+            individualProject={[
+              "Built interactive SQL editor interface",
+              "Connected to LLM for natural language to SQL conversion"
+            ]}
+            individualProjectHref="https://sql-agent-dusky.vercel.app/"
           />
         </div>
       </div>
