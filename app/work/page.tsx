@@ -28,6 +28,13 @@ export default function WorkPage() {
                 tags={['React', 'FAstAPI', 'Groq', 'Streaming']}
                 status="Completed"
             />
+            <ProjectCard
+                title="SQL Writing Agent"
+                description="Implement a SQL writing agent that can help you write sql from natural language"
+                href="https://sql-agent-dusky.vercel.app/"
+                tags={['React', 'FAstAPI', 'Groq', 'MCP']}
+                status="Completed"
+            />
             </div>
         </section>
     )
