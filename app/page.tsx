@@ -8,7 +8,7 @@ import { Collapsible } from 'app/components/collapsible'
 export default function Page() {
   return (
     <section className="mt-4">
-      <h1 className="mb-4 text-xl font-semibold tracking-tighter">
+      <h1 className="mb-4 text-3xl font-semibold tracking-tighter">
         Charlotte Wang
       </h1>
       <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
