@@ -9,7 +9,10 @@ export default function Page() {
         Charlotte Wang
       </h1>
         <p className="text-neutral-600 dark:text-neutral-400">
-          I am an AI native machine learning engineer. I am building my workflow on top of AI tools to improve efficiency and creativity. I am passionate about using AI to solve real-world problems and create value for users.
+          I am an enperience machine learning engineer/research data scientist with five plugs years expeience.
+          In my daily work, I built machine learning platform with huge data to help me company and clients to solve 
+          real business problem to increase revenue and reduce course. My experience include data infrastrueture, data pipeline, machine learning model, model evaluation and AI applications.
+          In addition, with recent trend of AI, I built AI foundation applications and tools for my company to improve productivity.
         </p>
       
       <div className="my-8">
