@@ -1,6 +1,7 @@
 import { BlogPosts } from 'app/components/posts'
 import { ProjectCard } from 'app/components/project-card'
 import { LearningItem } from 'app/components/learning-item'
+import { InterviewResource } from 'app/components/interview-resource'
 
 export default function Page() {
   return (
@@ -181,6 +182,37 @@ export default function Page() {
             description="Natural Language Processing with Deep Learning course covering NLP techniques."
             classification="book"
             href="/book/generativeaiwithlangchain"
+          />
+        </div>
+      </div>
+      
+      <div className="my-8">
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">Interview Resources</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <InterviewResource
+            category="Leetcode Coding"
+            description="Practice coding questions for technical interviews"
+            href="/interview-resource/leetcode-coding"
+          />
+          <InterviewResource
+            category="ML Coding"
+            description="Machine learning coding questions for interviews"
+            href="/interview-resource/ml-coding"
+          />
+          <InterviewResource
+            category="AI System Design"
+            description="System design questions for AI/ML roles"
+            href="/interview-resource/ai-system-design"
+          />
+          <InterviewResource
+            category="ML System Design"
+            description="System design questions for machine learning roles"
+            href="/interview-resource/ml-system-design"
+          />
+          <InterviewResource
+            category="SDE System Design"
+            description="System design questions for software engineering roles"
+            href="/interview-resource/sde-system-design"
           />
         </div>
       </div>
