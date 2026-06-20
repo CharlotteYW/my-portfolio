@@ -9,6 +9,7 @@ interface ProjectCardProps {
   companyWork?: string[]
   individualProject?: string[]
   individualProjectHref?: string | null
+  individualProjectTitle?: string
 }
 
 const statusConfig = {
@@ -33,7 +34,8 @@ export function ProjectCard({
   status='Completed',
   companyWork,
   individualProject,
-  individualProjectHref
+  individualProjectHref,
+  individualProjectTitle
 }: ProjectCardProps) {
 return (
   <div className="border border-gray-300 dark:border-gray-700 rounded-lg p-4 transition-transform hover:scale-[1.02]">
@@ -65,6 +67,9 @@ return (
     </div>
     
     <div className="border-t border-gray-200 dark:border-gray-600 pt-3 mt-3">
+      {individualProjectTitle && (
+        <h4 className="font-medium text-sm mb-2">{individualProjectTitle}</h4>
+      )}
       <ProjectBullet 
         title="Individual Project" 
         items={individualProject || []} 
