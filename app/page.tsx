@@ -1,5 +1,6 @@
 import { BlogPosts } from 'app/components/posts'
 import { ProjectCard } from 'app/components/project-card'
+import { LearningItem } from 'app/components/learning-item'
 
 export default function Page() {
   return (
@@ -7,12 +8,19 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Charlotte Wang
       </h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
-          I am an experienced machine learning engineer/research data scientist with five plus years experience. 
-          I am building my workflow on top of AI tools to improve efficiency and creativity. 
-          I am passionate about using AI to solve real-world problems and create value for users.
-        </p>
+      <p className="mb-4">
+        {`AI native machine learning engineer. Rebuilding my daily workflow on top of AI tools to improve efficiency.`}
+      </p>
       
+      <div className="my-8">
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">My Work</h2>
+        <p className="text-neutral-600 dark:text-neutral-400">
+          I am an AI native machine learning engineer. I am building my workflow on top of AI tools to improve efficiency and creativity. I am passionate about using AI to solve real-world problems and create value for users.
+        </p>
+        <p className="text-neutral-600 dark:text-neutral-400 mt-2">
+          I would try to put what I have done and learn here
+        </p>
+      </div>
       
       <div className="my-8">
         <h2 className="font-semibold text-xl mb-6 tracking-tighter">AI Applications</h2>
@@ -133,6 +141,48 @@ export default function Page() {
               "Developed interactive dashboard with Shiny"
             ]}
             individualProjectHref="#"
+          />
+        </div>
+      </div>
+      
+      <div className="my-8">
+        <h2 className="font-semibold text-xl mb-6 tracking-tighter">Courses & Books</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <LearningItem
+            title="Stanford CS336"
+            description="Deep Learning Course focusing on modern deep learning techniques and applications."
+            classification="course"
+            href="/course/cs336"
+          />
+          <LearningItem
+            title="Stanford CS224N"
+            description="Natural Language Processing with Deep Learning course covering NLP techniques."
+            classification="course"
+            href="/course/cs224n"
+          />
+          <LearningItem
+            title="AI Engineering"
+            description="Natural Language Processing with Deep Learning course covering NLP techniques."
+            classification="book"
+            href="/book/aiengineering"
+          />
+          <LearningItem
+            title="Designing Machine Learning Systems"
+            description="Natural Language Processing with Deep Learning course covering NLP techniques."
+            classification="book"
+            href="/book/designmachinelearningsystems"
+          />
+          <LearningItem
+            title="Hands-On Large Language Models"
+            description="Natural Language Processing with Deep Learning course covering NLP techniques."
+            classification="book"
+            href="/book/handsonlargelanguagemodels"
+          />
+          <LearningItem
+            title="Generative AI with LangChain"
+            description="Natural Language Processing with Deep Learning course covering NLP techniques."
+            classification="book"
+            href="/book/generativeaiwithlangchain"
           />
         </div>
       </div>
