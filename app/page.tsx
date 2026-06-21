@@ -35,7 +35,8 @@ Collaborative Filtering), Deep Learning (CNN, RNN), Classical ML (Regression, XG
         
         <h3 className="font-semibold text-base mb-2 ml-4">Machine Learning System & Workflow</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
+          <li>Human-in-the-loop ML workflows, ML Pipelines (Airflow), Model Deployment & Serving
+(FastAPI), Feature Engineering, Model Versioning (MLflow), A/B Testing, Model Monitoring & Observability</li>
         </ul>
         
         <h3 className="font-semibold text-base mb-2 ml-4">Cloud & Infrastructure</h3>
@@ -46,7 +47,7 @@ Pub/Sub), Kubernetes, Docker, Terraform, REST APIs.</li>
         
         <h3 className="font-semibold text-base mb-2 ml-4">Programming</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li>Python (PyTorch, TensorFlow, PySpark, Pandas, NumPy, Scikit-learn), SQL, Scala, Go.</li>
+          <li>Python (PyTorch, TensorFlow, PySpark, Pandas, NumPy, Scikit-learn), JavaSript/TypeScript, SQL, Scala, Go.</li>
         </ul>
         
         <h3 className="font-semibold text-base mb-2 ml-4">AI Tools & Frameworks</h3>
