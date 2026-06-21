@@ -29,7 +29,8 @@ export default function Page() {
         
         <h3 className="font-semibold text-base mb-2 ml-4">Machine Learning & Models</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
+          <li>Transformer Models (BERT, GPT), Recommendation Systems (Two-Tower, Learning-to-Rank,
+Collaborative Filtering), Deep Learning (CNN, RNN), Classical ML (Regression, XGBoost, LightGBM)</li>
         </ul>
         
         <h3 className="font-semibold text-base mb-2 ml-4">Machine Learning System & Workflow</h3>
@@ -45,12 +46,12 @@ Pub/Sub), Kubernetes, Docker, Terraform, REST APIs.</li>
         
         <h3 className="font-semibold text-base mb-2 ml-4">Programming</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
+          <li>Python (PyTorch, TensorFlow, PySpark, Pandas, NumPy, Scikit-learn), SQL, Scala, Go.</li>
         </ul>
         
         <h3 className="font-semibold text-base mb-2 ml-4">AI Tools & Frameworks</h3>
         <ul className="list-disc pl-5 space-y-1 mb-3 text-sm ml-4">
-          <li></li>
+          <li>LangChain, LangGraph, LibreChat, Open WebUI, vllm, sglang</li>
         </ul>
       </div>
       
