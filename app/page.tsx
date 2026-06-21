@@ -198,6 +198,12 @@ Pub/Sub), Kubernetes, Docker, Terraform, REST APIs.</li>
               href="/course/cs224n"
             />
           </div>
+            <LearningItem
+              title="Stanford CS229"
+              description="Regular machine learning course with traditional ML technique"
+              category="course"
+              href="/course/cs229"
+            />
         </Collapsible>
         
         <Collapsible title="Books">
