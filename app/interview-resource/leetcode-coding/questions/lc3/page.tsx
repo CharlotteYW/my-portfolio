@@ -73,6 +73,14 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return max_length</p>
         </div>
       </div>
+      <div className="mt-6">
+        <a 
+          href="/interview-resource/leetcode-coding"
+          className="text-blue-600 hover:underline"
+        >
+          Back to LeetCode Problems List
+        </a>
+      </div>
     </section>
   );
 }
